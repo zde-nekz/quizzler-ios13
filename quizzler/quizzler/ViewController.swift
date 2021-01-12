@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     var questionNumber = 0
     
     let quiz = [
-        "Four plus Two is equal to Six",
-        "Five minus Three is greater than One",
-        "Three plus Eight is less than Ten",
+        ["Four plus Two is equal to Six", "True"],
+        ["Five minus Three is greater than One", "True"],
+        ["Three plus Eight is less than Ten", "False"],
     ]
     
     override func viewDidLoad() {
@@ -30,13 +30,27 @@ class ViewController: UIViewController {
 
 
     @IBAction func actionButtonPressed(_ sender: UIButton) {
-        questionNumber += 1
+        
+        let answer = sender.currentTitle!
+        
+        if (answer == quiz[questionNumber][1]) {
+            print("Right")
+        } else {
+            print("Wrong")
+        }
+        
+        if (questionNumber < quiz.count - 1) {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
         updateUi()
+        
         
     }
     
     func updateUi() {
-        questionLabel.text = quiz[questionNumber]
+        questionLabel.text = quiz[questionNumber][0]
     }
 }
 
