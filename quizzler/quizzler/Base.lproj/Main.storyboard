@@ -71,7 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="falseButton" destination="l0Y-XH-Zzk" id="2aX-4c-NUE"/>
-                        <outlet property="progressBar" destination="wuz-N0-nbH" id="n4D-6P-cWT"/>
+                        <outlet property="progressView" destination="egg-iz-2L2" id="rZy-Vz-DuB"/>
                         <outlet property="questionLabel" destination="LA0-m5-TgK" id="PHr-CE-CIv"/>
                         <outlet property="trueButton" destination="huk-yw-Rlj" id="2qM-DJ-MZJ"/>
                     </connections>
