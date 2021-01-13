@@ -19,8 +19,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wuz-N0-nbH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMg-1t-4Wr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="WJW-QJ-ZUD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-m5-TgK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="588"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -58,6 +67,10 @@
                                         <color key="trackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </progressView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uMg-1t-4Wr" secondAttribute="trailing" constant="20" id="cpf-qu-IAk"/>
+                                    <constraint firstItem="uMg-1t-4Wr" firstAttribute="leading" secondItem="wuz-N0-nbH" secondAttribute="leading" constant="20" id="wNB-Tn-eSJ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -73,6 +86,7 @@
                         <outlet property="falseButton" destination="l0Y-XH-Zzk" id="2aX-4c-NUE"/>
                         <outlet property="progressView" destination="egg-iz-2L2" id="rZy-Vz-DuB"/>
                         <outlet property="questionLabel" destination="LA0-m5-TgK" id="PHr-CE-CIv"/>
+                        <outlet property="scoreLabel" destination="uMg-1t-4Wr" id="CjF-D3-CgF"/>
                         <outlet property="trueButton" destination="huk-yw-Rlj" id="2qM-DJ-MZJ"/>
                     </connections>
                 </viewController>
