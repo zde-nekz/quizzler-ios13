@@ -29,17 +29,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-m5-TgK">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="588"/>
+                                        <rect key="frame" x="0.0" y="30" width="414" height="498"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huk-yw-Rlj">
-                                        <rect key="frame" x="0.0" y="628" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="538" width="414" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="YOs-hB-m2v"/>
                                         </constraints>
-                                        <state key="normal" title="True" backgroundImage="Rectangle">
+                                        <state key="normal" title="First Option" backgroundImage="Rectangle">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -47,15 +47,27 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0Y-XH-Zzk">
-                                        <rect key="frame" x="0.0" y="718" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="628" width="414" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="cW6-MA-DlB"/>
                                         </constraints>
-                                        <state key="normal" title="False" backgroundImage="Rectangle">
+                                        <state key="normal" title="Second Option" backgroundImage="Rectangle">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="actionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clm-zq-rPi"/>
+                                            <action selector="actionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="chU-kt-pBK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUh-Nz-4n9">
+                                        <rect key="frame" x="0.0" y="718" width="414" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8bP-9T-w57"/>
+                                        </constraints>
+                                        <state key="normal" title="Third Option" backgroundImage="Rectangle">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r69-K0-qjL"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="egg-iz-2L2">
@@ -83,11 +95,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="l0Y-XH-Zzk" id="2aX-4c-NUE"/>
+                        <outlet property="firstOption" destination="huk-yw-Rlj" id="dnT-O1-O0F"/>
                         <outlet property="progressView" destination="egg-iz-2L2" id="rZy-Vz-DuB"/>
                         <outlet property="questionLabel" destination="LA0-m5-TgK" id="PHr-CE-CIv"/>
                         <outlet property="scoreLabel" destination="uMg-1t-4Wr" id="CjF-D3-CgF"/>
-                        <outlet property="trueButton" destination="huk-yw-Rlj" id="2qM-DJ-MZJ"/>
+                        <outlet property="secondOption" destination="l0Y-XH-Zzk" id="R0z-p1-WSU"/>
+                        <outlet property="thirdOption" destination="bUh-Nz-4n9" id="jFf-jJ-sNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
