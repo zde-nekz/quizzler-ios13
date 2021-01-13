@@ -1,24 +1,13 @@
 //
-//  ViewController.swift
+//  QuizBrain.swift
 //  quizzler
 //
-//  Created by Zdeněk Škrobák on 12.01.2021.
+//  Created by Zdeněk Škrobák on 13.01.2021.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
-    @IBOutlet weak var progressView: UIProgressView!
-    
-    var questionNumber = 0
-    
-    struct QuizQuestion {
-        
-    }
+struct QuizBrain {
     
     let quiz: [Question] = [
           Question(q: "A slug's blood is green.", a: "True"),
@@ -36,42 +25,25 @@ class ViewController: UIViewController {
 
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        updateUi()
+    var questionNumber = 0
+    
+    func checkAnswer(_ userAnswer: String) -> Bool {
+        return userAnswer == quiz[questionNumber].answer
     }
-
-
-    @IBAction func actionButtonPressed(_ sender: UIButton) {
-        
-        let answer = sender.currentTitle!
-        
-        if (answer == quiz[questionNumber].answer) {
-            sender.backgroundColor = UIColor.green
-        } else {
-            sender.backgroundColor = UIColor.red
-        }
-        
+    
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
+    
+    func getProgress() -> Float {
+        return Float(questionNumber + 1) / Float(quiz.count)
+    }
+    
+    mutating func nextQuestion() {
         if (questionNumber < quiz.count - 1) {
             questionNumber += 1
         } else {
             questionNumber = 0
         }
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUi), userInfo: nil, repeats: false)
-        
-        
     }
-    
-    @objc func updateUi() {
-        questionLabel.text = quiz[questionNumber].text
-        
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
-        
-        progressView.progress = Float(questionNumber + 1) / Float(quiz.count)
-        
-    }
-
 }
-
